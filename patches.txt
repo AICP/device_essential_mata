@@ -1,1 +1,7 @@
+# long screenshot
+93383  http://gerrit.aicp-rom.com frameworks/base
+93385  http://gerrit.aicp-rom.com vendor/aicp
+93386  http://gerrit.aicp-rom.com frameworks/base
+93384  http://gerrit.aicp-rom.com platform/manifest
+# remove stylus fuckery
 81095  http://gerrit.aicp-rom.com frameworks/native
