@@ -20,6 +20,11 @@
     "branch":      "9.x"
   },
   {
+    "repository":  "phpBB3/packages_apps_Longshot",
+    "target_path": "packages/apps/Longshot",
+    "branch":      "pie-plus"
+  },
+  {
     "repository":  "kdrag0n/arm-eabi-gcc",
     "target_path": "prebuilts/gcc/linux-x86/arm/gcc-9",
     "branch":      "9.x"
