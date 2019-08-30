@@ -665,11 +665,6 @@ service vendor.btaddr_extract /vendor/bin/btaddr_extract
     group system
     oneshot
 
-service vendor.charger /charger
-    class charger
-    group system graphics input
-    seclabel u:r:charger:s0
-
 service vendor.cnd /vendor/bin/cnd
     class main
     user system
@@ -803,16 +798,6 @@ on property:sys.shutdown.requested=*
 
     # Disable subsystem restart
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x9889deed
-
-service vendor.qbcharger /charger -m 1
-    disabled
-    oneshot
-
-on property:sys.qbcharger.enable=true
-    start vendor.qbcharger
-
-on property:sys.qbcharger.enable=false
-    stop vendor.qbcharger
 
 service vendor.qseecomd /vendor/bin/qseecomd
     class core
