@@ -514,6 +514,12 @@ on boot
     chmod 660 /sys/class/leds/red/blink
     chmod 660 /sys/class/leds/blue/blink
     chmod 660 /sys/class/leds/green/blink
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/blue/brightness
+    chmod 660 /sys/class/leds/red/brightness
+    chmod 660 /sys/class/leds/blue/brightness
+    chmod 660 /sys/class/leds/green/brightness
     chown system system /sys/class/leds/red/ramp_step_ms
     chown system system /sys/class/leds/blue/ramp_step_ms
     chown system system /sys/class/leds/green/ramp_step_ms
@@ -537,13 +543,17 @@ on boot
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/green/blink
     chown system system /sys/class/leds/blue/blink
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/blue/brightness
+
     start vendor.rmt_storage
 
     # Adjust permission for Sidecar
     chown system shell /sys/class/sidecar/power_control
 
 on charger
-    setprop persist.sys.usb.config mass_storage
+    setprop persist.sys.usb.config charger
     load_system_props
     write /sys/class/leds/lcd-backlight/brightness  80
     write /sys/devices/system/cpu/cpu1/online 0
